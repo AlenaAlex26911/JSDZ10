@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Задание 1
+1. Поиск в интернете (бесплатные api примеры).
+2. Найти любые данные, на произвольную тему.
+3. Создать файл data.js.
+4. Создать переменную которая будет хранить данные из публичных api.
+
+Задание 2
+1. Создать файл index.html.
+2. Подключить data.js.
+3. Сформировать контент из данных (картинка загловок и параграф).
+4. Добавить данный контент в вёрстку.
+5. * Добавить стили при необходимости (по желанию). -->
+    <div class="content"></div>
+    <script src="./data.js"></script>
+    <script>
+        const contentEl = document.querySelector(".content");
+        const data = JSON.parse(dataJson);
+        console.log(data);
+
+        data.forEach(element => {
+            const dataElm = document.createElement("div");
+            dataElm.classList.add("data");
+            contentEl.appendChild(dataElm);
+
+
+            const imageData = document.createElement("img");
+            imageData.classList.add("imageData");
+            imageData.src = element.img;
+            dataElm.appendChild(imageData);
+
+            const answerData = document.createElement("h2");
+            answerData.classList.add("answer");
+            answerData.textContent = element.answer;
+            dataElm.appendChild(answerData);
+
+
+            const questionData = document.createElement("p");
+            questionData.classList.add("question");
+            questionData.textContent = element.question;
+            dataElm.appendChild(questionData);
+        });
+    </script>
+</body>
+
+</html>

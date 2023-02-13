@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  background-color: #a0abd8;
+}
+.data {
+  border: 1px solid;
+  padding: 16px;
+  width: 250px;
+}
+.imageData {
+  height: 200px;
+  width: 100%;
+}
+h2 {
+  text-align: center;
+  color: #220e91;
+}
+p {
+  text-align: center;
+  background-color: #c4cef5;
+}
